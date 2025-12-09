@@ -174,4 +174,8 @@ def generate_words_from_csv(words_csv_path, features_csv_path, default_count=1):
 
 
 if __name__ == "__main__": 
-    result_df = generate_words_from_csv('words.csv', 'features.csv', default_count=1000)
+    features_path = "./features.csv"
+    words_path = "./words.csv"
+    tokens_path = "./tokens.csv"
+    result_df = generate_words_from_csv(words_path, features_path, default_count=1000)
+    result_df.to_csv(tokens_path, index=False)
